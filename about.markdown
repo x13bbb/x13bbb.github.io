@@ -1,18 +1,22 @@
 ---
-layout: page
+layout: default
 title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+this is the about page
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+<div class="custom social-buttons">
+  <a href="https://twitter.com/yourusername" class="social-button">
+    <i class="fab fa-twitter"></i> Twitter
+  </a>
+  <a href="https://github.com/yourusername" class="social-button">
+    <i class="fab fa-github"></i> GitHub
+  </a>
+  <a href="https://linkedin.com/in/yourusername" class="social-button">
+    <i class="fab fa-linkedin"></i> LinkedIn
+  </a>
+  <a href="mailto:youremail@example.com" class="social-button">
+    <i class="fas fa-envelope"></i> Email
+  </a>
+</div>
