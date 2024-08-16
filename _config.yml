@@ -18,14 +18,14 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: '0x13'
-email: 0x13rian@gmail.com
+title: "0x13"
+# email: 0x13rian@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   :)
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: 0x13rian
-github_username:  0x13rian
+twitter_username: "0x13B"
+github_username:  "0x13bbb"
 
 # Build settings
 remote_theme: pages-themes/midnight@v0.2.0 # theme: minima
@@ -42,6 +42,17 @@ minima:
 
 include:
 - assets
+
+defaults:
+  -
+    scope:
+      type: "posts"
+    values:
+      permalink: "/posts/:title/"
+
+webrick:
+  headers:
+    "X-Content-Type-Options": "nosniff"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
