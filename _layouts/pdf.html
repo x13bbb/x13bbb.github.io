@@ -3,10 +3,10 @@ layout: default
 ---
 <a href="/lib/">&lsaquo; back</a>
 <h1>{{ page.title }}</h1>
+<p>date: {{ page.date | date: site.minima.date_format }}</p>
 <p>author{% if page.author.size > 1 %}s{% endif %}: 
     {{ page.author | join: ", " }}
 </p>
-<p>date: {{ page.date | date: site.minima.date_format }}</p>
 <p><a href="{{ site.baseurl }}/assets/pdf/{{ page.file }}" download>download</a></p>
 <div id="pdf-viewer"></div>
 
