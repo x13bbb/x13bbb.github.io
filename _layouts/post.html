@@ -19,8 +19,10 @@ layout: default
 
 </article>
 
-<div style="margin-top:50px;" class="post-navigation">
-  <h3>navigation</h3>
+<div style="margin-top:20px;" class="post-navigation">
+  {% if page.previous.url or page.next.url %}
+  <hr>
+  {% endif %}
   {% if page.previous.url %}
     <a class="prev" href="{{page.previous.url}}">&raquo; next: {{page.previous.title}}</a>
     <br>
