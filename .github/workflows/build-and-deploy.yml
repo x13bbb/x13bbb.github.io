@@ -31,8 +31,10 @@ jobs:
       run: |
         git config user.name github-actions
         git config user.email github-actions@github.com
-        git checkout -b live
-        git add -A
+        git fetch origin live:live
+        git checkout live
+        git merge main
         COMMIT_MSG=$(git log -1 --pretty=%B)
-        git commit -m "deploy to live: $COMMIT_MSG"
+        git commit --amend -m "deploy to live: $COMMIT_MSG"
         git push -f origin live
+        git checkout main
