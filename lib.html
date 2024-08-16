@@ -1,0 +1,36 @@
+---
+layout: default
+title: lib
+---
+<h1>lib</h1>
+<!-- <ul>
+  {% for pdf in site.lib %}
+    <li>
+      <a href="{{ pdf.url }}">{{ pdf.title }}</a>
+      ({{ pdf.date | date: site.minima.date_format }}) 
+      by 
+      <p>{{ pdf.author | join: ", " }}</p>
+    </p>
+    </li>
+  {% endfor %}
+</ul> -->
+{% assign lib_files = site.lib | sort: "date" | reverse %}
+{% assign categories = lib_files | map: "categories" | uniq %}
+
+{% if categories.size > 0 %}
+  {% for category in categories %}
+    <h2>{{ category }}</h2>
+    <ul>
+      {% assign category_files = lib_files | where: "categories", category %}
+      {% for file in category_files %}
+        <li>
+          <a href="{{ file.url | relative_url }}">{{ file.title }}</a>
+          <span class="post-date">({{ file.date | date: "%Y" }})</span>
+          by {{ file.author | join: ", " }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+{% else %}
+  <p>No categories found :(</p>
+{% endif %}
