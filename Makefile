@@ -12,7 +12,7 @@ install:
 
 # Build the site
 build:
-	$(JEKYLL) build
+	$(JEKYLL) build --verbose
 
 # Serve the site locally
 dev:
