@@ -14,15 +14,9 @@ install:
 build:
 	$(JEKYLL) build
 
-watch:
-	$(JEKYLL) build --watch
-
 # Serve the site locally
-serve:
-	$(JEKYLL) serve --port 4001
-
-# Build and serve the site locally
-dev:	serve	--incremental	--watch	--livereload
+dev:
+	$(JEKYLL) serve --port 4001 --incremental
 
 # Clean the built site
 clean:
@@ -51,7 +45,8 @@ check_links:
 
 # Create a new post
 new_post:
-	@read -p "Enter the title of the post: " title; \
+	@read -p "enter the title of the post: " title; \
+	read -p "enter the description of the post: " desc; \
 	date=$$(date +%Y-%m-%d); \
 	slug=$$(echo "$$title" | sed -e 's/[^[:alnum:]]/-/g' | tr -s '-' | tr A-Z a-z); \
 	filename="_posts/$$date-$$slug.md"; \
@@ -59,6 +54,8 @@ new_post:
 	echo "layout: post" >> "$$filename"; \
 	echo "title: \"$$title\"" >> "$$filename"; \
 	echo "date: $$date" >> "$$filename"; \
+	echo "description: \"$$desc\"" >> "$$filename"; \
+	echo "categories: []" >> "$$filename"; \
 	echo "---" >> "$$filename"; \
 	echo "\nNew post created: $$filename"
 
