@@ -43,6 +43,9 @@ minima:
 include:
 - assets
 
+exclude:
+  - README.md
+
 defaults:
   -
     scope:
