@@ -18,6 +18,7 @@
     <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <script src="{{ '/assets/js/cursor-trail.js' | relative_url }}"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script src="{{ '/assets/js/respond.js' | relative_url }}"></script>
     <!--[if lt IE 9]>
@@ -30,6 +31,7 @@
     <!-- {% include head-custom.html %} -->
   </head>
   <body>
+      <div id="star-trail"></div>
       <div id="header">
         {% include navigation.html %}
       </div><!-- end header -->

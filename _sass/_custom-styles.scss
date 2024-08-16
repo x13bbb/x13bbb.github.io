@@ -237,3 +237,15 @@ body {
 p, ul, ol, table, pre, dl {
     margin: 0 0 10px;
 }
+
+.star {
+    position: fixed;
+    pointer-events: none;
+    opacity: 0;
+    animation: twinkle 0.8s linear;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.25; transform: scale(0.1); }
+    100% { opacity: 0; transform: scale(1.1); }
+  }
