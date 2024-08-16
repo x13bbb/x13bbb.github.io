@@ -10,13 +10,16 @@ In the future I'm interested in learning about:
 - Rust
 - Go
 
+## projects
+[tinychain](https://github.com/tinychainorg/tinychain) - a cleanroom implementation of a Nakamoto-style blockchain, the tiniest blockchain implementation in the world. I'm working wit da goat [@liamzebedee](https://github.com/liamzebedee)
+
 ## links
 DMs open (maybe)
 <div class="custom social-buttons">
-  <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/0x13B" class="social-button">
+  <a href="https://twitter.com/0x13B" class="social-button">
     <i class="fab fa-twitter"></i> twitter
   </a>
-  <a target="_blank" rel="noopener noreferrer" href="https://github.com/0x13bbb" class="social-button">
+  <a href="https://github.com/0x13bbb" class="social-button">
     <i class="fab fa-github"></i> github
   </a>
 </div>
