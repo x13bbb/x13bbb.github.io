@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: test build and deploy to live
 
 on:
   push:
@@ -8,6 +8,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    if: "contains(github.event.head_commit.message, '[deploy]')"
     
     steps:
     - name: Checkout code
@@ -22,15 +23,16 @@ jobs:
         gem install bundler
         bundle install
 
-    - name: Build site
+    - name: test build site
       run: bundle exec jekyll build
 
-    - name: Deploy to live branch
+    - name: deploy to live branch
       if: success()
       run: |
         git config user.name github-actions
         git config user.email github-actions@github.com
         git checkout -b live
         git add -A
-        git commit -m "Deploy to live"
+        COMMIT_MSG=$(git log -1 --pretty=%B)
+        git commit -m "deploy to live: $COMMIT_MSG"
         git push -f origin live
