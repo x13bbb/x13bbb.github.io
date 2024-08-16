@@ -1,7 +1,8 @@
 ---
 layout: default
 ---
-<article class="post">
+<a href="/posts/">&lsaquo; back</a>
+<article style="margin-top: 20px" class="post">
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
     <p class="post-meta">
@@ -9,11 +10,6 @@ layout: default
         {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
         {{ page.date | date: date_format }}
       </time>
-      {% if page.author %}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span itemprop="name">{{ page.author }}</span>
-          </span>
-      {% endif %}
     </p>
   </header>
 
@@ -21,31 +17,15 @@ layout: default
     {{ content }}
   </div>
 
-  {% if site.disqus.shortname %}
-    {% include disqus_comments.html %}
-  {% endif %}
 </article>
 
-{% if site.related_posts.size >= 1 %}
-<div class="related-posts">
-  <h3>Related Posts</h3>
-  <ul>
-    {% for related_post in site.related_posts limit:3 %}
-      <li>
-        <a href="{{ related_post.url | relative_url }}">
-          {{ related_post.title }}
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
-</div>
-{% endif %}
-
-<div class="post-navigation">
+<div style="margin-top:50px;" class="post-navigation">
+  <h3>navigation</h3>
   {% if page.previous.url %}
-    <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
+    <a class="prev" href="{{page.previous.url}}">&raquo; next: {{page.previous.title}}</a>
+    <br>
   {% endif %}
   {% if page.next.url %}
-    <a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
+    <a class="next" href="{{page.next.url}}">&laquo; prev: {{page.next.title}}</a>
   {% endif %}
 </div>
