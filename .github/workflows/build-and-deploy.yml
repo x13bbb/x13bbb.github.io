@@ -33,7 +33,7 @@ jobs:
         git config user.email github-actions@github.com
         git fetch origin live:live
         git checkout live
-        git merge main
+        git merge --allow-unrelated-histories main
         COMMIT_MSG=$(git log -1 --pretty=%B)
         git commit --amend -m "deploy to live: $COMMIT_MSG"
         git push -f origin live
