@@ -20,3 +20,10 @@ DMs open (maybe)
     <i class="fab fa-github"></i> github
   </a>
 </div>
+
+## disclaimer
+This site contains information about information security techniques and practices. Before using any of this content, please be aware:
+
+- Get proper authorization before testing or applying these techniques on any systems or networks.
+- Follow all relevant laws and regulations in your area.
+- This information is for education and authorized security testing only.
