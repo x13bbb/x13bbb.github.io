@@ -23,7 +23,7 @@
     
 }
 
-#header nav ul li a:hover {
+#header nav ul li a:hover, a:hover  {
     color: white!important;
 }
 
@@ -39,7 +39,6 @@
 }
 
 #header nav ul li {
-    color: white;
     font-size: 14px;
     display: flex;
     align-items: center;
@@ -65,12 +64,12 @@ nav ul {
 
 // anchor links
 a {
-    color: inherit !important;
     font-size: 16px;
     font-weight: 400;
     text-decoration: none;
     position: relative;
     font-style: italic;
+    color: #f0e7d5;
   }
   
 a::after {
@@ -202,7 +201,6 @@ hr {
 
 // home page
 .social-button {
-    color: white;
     border: none;
     padding: 5px 12px;
     margin-top: 6px;
@@ -226,6 +224,7 @@ body {
     font: 14px / 1.5 "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
     padding: 0;
     background: #1c1c1c;
+    color: #e8e8e8
 }
 
 .wrapper {
