@@ -13,10 +13,10 @@ In the future I'm interested in learning about:
 ## links
 DMs open (maybe)
 <div class="custom social-buttons">
-  <a href="https://twitter.com/0x13B" class="social-button">
+  <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/0x13B" class="social-button">
     <i class="fab fa-twitter"></i> twitter
   </a>
-  <a href="https://github.com/0x13bbb" class="social-button">
+  <a target="_blank" rel="noopener noreferrer" href="https://github.com/0x13bbb" class="social-button">
     <i class="fab fa-github"></i> github
   </a>
 </div>
