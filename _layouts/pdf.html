@@ -8,27 +8,26 @@ layout: default
 </p>
 <p>date: {{ page.date | date: site.minima.date_format }}</p>
 <p><a href="{{ site.baseurl }}/assets/pdf/{{ page.file }}" download>download</a></p>
-<!-- <embed src="{{ site.baseurl }}/assets/pdf/{{ page.file }}" width="100%" height="600px" type="application/pdf"> -->
 <div id="pdf-viewer"></div>
 
 <script>
-function isMobile() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    var pdfViewer = document.getElementById('pdf-viewer');
-    var pdfUrl = "{{ site.baseurl }}/assets/pdf/{{ page.file }}";
-    
-    if (isMobile()) {
-        // Use Google Docs Viewer for mobile
-        var encodedPdfUrl = encodeURIComponent("{{ site.url }}{{ site.baseurl }}/assets/pdf/{{ page.file }}");
-        pdfViewer.innerHTML = '<iframe src="https://docs.google.com/viewer?url=' + encodedPdfUrl + '&embedded=true" width="100%" height="600px" style="border: none;"></iframe>';
-    } else {
-        // Use embed for desktop
-        pdfViewer.innerHTML = '<embed src="' + pdfUrl + '" width="100%" height="600px" type="application/pdf">';
+    function isMobile() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     }
-});
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var pdfViewer = document.getElementById('pdf-viewer');
+        var pdfUrl = "{{ site.baseurl }}/assets/pdf/{{ page.file }}";
+        
+        if (isMobile()) {
+            // Use Google Docs Viewer for mobile
+            var encodedPdfUrl = "{{ site.url }}{{ site.baseurl }}/assets/pdf/{{ page.file }}"; //encodeURIComponent("{{ site.url }}{{ site.baseurl }}/assets/pdf/{{ page.file }}");
+            pdfViewer.innerHTML = '<iframe src="https://docs.google.com/viewer?url=' + encodedPdfUrl + '&embedded=true" width="100%" height="600px" style="border: none;"></iframe>';
+        } else {
+            // Use embed for desktop
+            pdfViewer.innerHTML = '<embed src="' + pdfUrl + '" width="100%" height="600px" type="application/pdf">';
+        }
+    });
 </script>
 <noscript>
     <embed src="{{ site.baseurl }}/assets/pdf/{{ page.file }}" width="100%" height="600px" type="application/pdf">
