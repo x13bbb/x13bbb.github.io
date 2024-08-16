@@ -47,6 +47,7 @@ check_links:
 new_post:
 	@read -p "enter the title of the post: " title; \
 	read -p "enter the description of the post: " desc; \
+	read -p "enter categories (comma-separated): " categories; \
 	date=$$(date +%Y-%m-%d); \
 	slug=$$(echo "$$title" | sed -e 's/[^[:alnum:]]/-/g' | tr -s '-' | tr A-Z a-z); \
 	filename="_posts/$$date-$$slug.md"; \
@@ -55,7 +56,44 @@ new_post:
 	echo "title: \"$$title\"" >> "$$filename"; \
 	echo "date: $$date" >> "$$filename"; \
 	echo "description: \"$$desc\"" >> "$$filename"; \
-	echo "categories: []" >> "$$filename"; \
+	echo "categories: [" >> "$$filename"; \
+	IFS=',' read -ra CATEGORY_ARRAY <<< "$$categories"; \
+	for category in "$${CATEGORY_ARRAY[@]}"; do \
+		echo "  \"$$category\"," >> "$$filename"; \
+	done; \
+	sed -i '$$ s/,$//' "$$filename"; \
+	echo "]" >> "$$filename"; \
+	echo "---" >> "$$filename"; \
+	echo "\nNew post created: $$filename"
+
+# Create a lib entry
+new_lib:
+	@read -p "enter the title of the lib entry (page name): " title; \
+	read -p "enter the title of the doc (with file ext): " doc; \
+	read -p "enter the date of the lib entry (yyyy-mm-dd): " desc; \
+	read -p "enter categories (comma-separated): " categories; \
+	read -p "enter the number of authors: " num_authors; \
+	date=$$(date +%Y-%m-%d); \
+	slug=$$(echo "$$title" | sed -e 's/[^[:alnum:]]/-/g' | tr -s '-' | tr A-Z a-z); \
+	filename="_lib/$$slug.md"; \
+	doc_title=$$(echo "$$doc" | sed 's/\.[^.]*$$//'); \
+	echo "---" > "$$filename"; \
+	echo "layout: pdf" >> "$$filename"; \
+	echo "title: \"$$doc_title\"" >> "$$filename"; \
+	echo "file: \"$$doc\"" >> "$$filename"; \
+	echo "date: $$date" >> "$$filename"; \
+	echo "description: \"$$desc\"" >> "$$filename"; \
+	echo "categories: [$$categories]" >> "$$filename"; \
+	if [ "$$num_authors" -eq 1 ]; then \
+		read -p "Enter the author's name: " author; \
+		echo "author: \"$$author\"" >> "$$filename"; \
+	else \
+		echo "author:" >> "$$filename"; \
+		for i in $$(seq 1 $$num_authors); do \
+			read -p "Enter author $$i's name: " author; \
+			echo "  - \"$$author\"" >> "$$filename"; \
+		done; \
+	fi; \
 	echo "---" >> "$$filename"; \
 	echo "\nNew post created: $$filename"
 
