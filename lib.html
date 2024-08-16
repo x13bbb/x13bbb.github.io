@@ -1,19 +1,9 @@
 ---
 layout: default
 title: lib
+permalink: /lib/
 ---
 <h1>lib</h1>
-<!-- <ul>
-  {% for pdf in site.lib %}
-    <li>
-      <a href="{{ pdf.url }}">{{ pdf.title }}</a>
-      ({{ pdf.date | date: site.minima.date_format }}) 
-      by 
-      <p>{{ pdf.author | join: ", " }}</p>
-    </p>
-    </li>
-  {% endfor %}
-</ul> -->
 {% assign lib_files = site.lib | sort: "date" | reverse %}
 {% assign categories = lib_files | map: "categories" | uniq %}
 
