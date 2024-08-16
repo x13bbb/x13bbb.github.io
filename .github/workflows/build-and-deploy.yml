@@ -31,11 +31,8 @@ jobs:
       run: |
         git config user.name github-actions
         git config user.email github-actions@github.com
-        git fetch origin live:live
-        git checkout live
-        git merge --strategy-option ours --no-edit main
-        git checkout main -- .
-        COMMIT_MSG=$(git log -1 --pretty=%B)
-        git commit --amend -m "deploy to live: $COMMIT_MSG"
+        git fetch origin live:live || true
+        git checkout -B live
+        git reset --hard origin/main
         git push -f origin live
         git checkout main
