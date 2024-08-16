@@ -14,7 +14,8 @@ checkout the `Makefile` for more info
 including '[deploy]' in the commit message will trigger a merge from main to live and live by github-pages default will deploy the site
 
 # todo
-- [ ] a books library
+- [ ] ACTUALLY WRITE
+- [X] a books library
 - [ ] look into faraday-retry middle ware
 - [ ] rspec and tests
 - [ ] clean up old S/CSS, layouts, HTML
