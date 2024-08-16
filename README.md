@@ -14,6 +14,7 @@ checkout the `Makefile` for more info
 including '[deploy]' in the commit message will trigger a merge from main to live and live by github-pages default will deploy the site
 
 # todo
+- [ ] a books library
 - [ ] look into faraday-retry middle ware
 - [ ] rspec and tests
 - [ ] clean up old S/CSS, layouts, HTML
@@ -21,4 +22,8 @@ including '[deploy]' in the commit message will trigger a merge from main to liv
 
 ## Attribution
 
-the [midnight](https://github.com/pages-themes/midnight) theme by the [pages-themes](https://github.com/pages-themes) team is licensed under CC0 1.0 Universal.
+the [midnight](https://github.com/pages-themes/midnight) theme by the [pages-themes](https://github.com/pages-themes/midnight/graphs/contributors) team is licensed under [CC0 1.0 Universal](https://github.com/pages-themes/midnight/blob/master/LICENSE).
+
+<a href="https://github.com/pages-themes/midnight/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=pages-themes/midnight" />
+</a>
