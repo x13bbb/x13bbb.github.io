@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<span title="u r under my spell"><img src="/assets/img/cat.png" class="spin-on-hover" alt="profile picture" style="border-radius: 50%;margin: 0 auto;" height="150"></span>
+<span title="u r under my spell"><img src="/assets/img/cat.png" class="spin-on-hover" alt="profile picture" style="border-radius: 50%;margin: 10px auto 40px auto;" height="150"></span>
 
 ## about
 Currently working as a developer. I'm interested in information security, distributed systems, and math, etc. I'll be working on content/notes on things I find interesting/useful. I've worked across industries, e.g. telcos, fintech, and small-businesses in security and software engineering positions starting in 2019.
