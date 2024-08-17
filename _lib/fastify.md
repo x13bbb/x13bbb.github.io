@@ -9,4 +9,5 @@ author:
   - "Maksim Sinik"
   - "Manuel Spigolon"
   - "Matteo Collina"
+permalink: /lib/fastify/
 ---

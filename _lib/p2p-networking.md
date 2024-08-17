@@ -9,4 +9,5 @@ author:
 date: 2009-11-24
 layout: pdf
 categories: [networking, p2p]
+permalink: /lib/handbookp2p/
 ---

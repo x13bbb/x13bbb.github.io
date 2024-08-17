@@ -71,6 +71,7 @@ new_lib:
 	@read -p "enter the title of the lib entry (page name): " title; \
 	read -p "enter the title of the doc (with file ext): " doc; \
 	read -p "enter the date of the lib entry (yyyy-mm-dd): " desc; \
+	read -p "enter the remarks of the doc (with file ext): " remark; \
 	read -p "enter categories (comma-separated): " categories; \
 	read -p "enter the number of authors: " num_authors; \
 	date=$$(date +%Y-%m-%d); \
@@ -81,8 +82,9 @@ new_lib:
 	echo "layout: pdf" >> "$$filename"; \
 	echo "title: \"$$doc_title\"" >> "$$filename"; \
 	echo "file: \"$$doc\"" >> "$$filename"; \
-	echo "date: $$date" >> "$$filename"; \
-	echo "description: \"$$desc\"" >> "$$filename"; \
+	echo "permalink: \"/lib/$$slug/\"" >> "$$filename"; \
+	echo "date: $$desc" >> "$$filename"; \
+	echo "remark: $$remark" >> "$$filename"; \
 	echo "categories: [$$categories]" >> "$$filename"; \
 	if [ "$$num_authors" -eq 1 ]; then \
 		read -p "Enter the author's name: " author; \
