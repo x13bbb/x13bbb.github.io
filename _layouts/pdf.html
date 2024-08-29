@@ -7,6 +7,9 @@ layout: default
 <p>author{% if page.author.size > 1 %}s{% endif %}: 
     {{ page.author | join: ", " }}
 </p>
+{% if page.remark%}
+    <p>remarks: {{ page.remark }}</p>
+{% endif %}
 <p><a href="{{ site.baseurl }}/assets/pdf/{{ page.file }}" download>download</a></p>
 <div id="pdf-viewer"></div>
 
