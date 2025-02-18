@@ -54,7 +54,7 @@ new_post:
 	echo "---" > "$$filename"; \
 	echo "layout: post" >> "$$filename"; \
 	echo "title: \"$$title\"" >> "$$filename"; \
-	echo "date: $$date" >> "$$filename"; \
+	echo "date: $$date 00:00:00 +0000" >> "$$filename"; \
 	echo "description: \"$$desc\"" >> "$$filename"; \
 	echo "categories: [" >> "$$filename"; \
 	IFS=',' read -ra CATEGORY_ARRAY <<< "$$categories"; \
