@@ -2,13 +2,13 @@
     <ul>
         {% for item in site.data.navigation %}
         <li>
-            <a class="custom" href="{{ item.link }}"
-                {% if item.font-family %}
-                    style="font-weight:900;font-family:{{ item.font-family }};"
-                {% endif %}
-                {% if page.url == item.link %}
-                    class="active"
-                {% endif %}>{{ item.name }}</a>
+            <a class="custom {% if page.url == item.link %}active{% endif %}" 
+               href="{{ item.link }}"
+               {% if item.font-family %}
+               style="font-weight:900;font-family:'{{ item.font-family }}'"
+               {% endif %}>
+                {{ item.name }}
+            </a>
         </li>
         {% endfor %}
     </ul>
