@@ -5,7 +5,7 @@
             <a class="custom {% if page.url == item.link %}active{% endif %}" 
                href="{{ item.link }}"
                {% if item.font-family %}
-               style="font-weight:900;font-family:'{{ item.font-family }}'"
+               style="font-weight:900;font-family:{{ item.font-family }}"
                {% endif %}>
                 {{ item.name }}
             </a>
