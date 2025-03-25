@@ -16,7 +16,7 @@ build:
 
 # Serve the site locally
 dev:
-	$(JEKYLL) serve --port 4001 --livereload --incremental --watch
+	$(JEKYLL) serve --port 4001 --livereload --incremental --watch --verbose
 
 # Clean the built site
 clean:
