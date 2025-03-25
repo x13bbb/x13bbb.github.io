@@ -6,7 +6,7 @@ there's also the following utils:
 - `make check_links` 
 - `make clean` deletes the `_site` folder
 - `make build`
-- `make prod` merges main to live if you don't want to use the github actions trigger
+- `make deploy` merges main to live if you don't want to use the github actions trigger
 
 checkout the `Makefile` for more info
 
@@ -14,12 +14,13 @@ checkout the `Makefile` for more info
 including '[deploy]' in the commit message will trigger a merge from main to live and live by github-pages default will deploy the site
 
 # todo
-- [ ] ACTUALLY WRITE
+- [x] ACTUALLY WRITE
 - [X] a books library
-- [ ] look into faraday-retry middle ware
+- [x] clean up old S/CSS, layouts, HTML
+- [x] styling
+## someday?
 - [ ] rspec and tests
-- [ ] clean up old S/CSS, layouts, HTML
-- [ ] styling
+- [ ] look into faraday-retry middle ware
 
 ## Attribution
 
