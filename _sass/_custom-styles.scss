@@ -275,9 +275,14 @@ html {
 }
 
 ::selection {
-    background-color: rgba(241, 230, 149, 0.4); /* #f1e695 with 40% opacity */
+    background-color: rgba(241, 230, 149, 0.4);
 }
 
 ::-moz-selection { /* Firefox */
     background-color: rgba(241, 230, 149, 0.4);
+}
+
+ul li {
+list-style: disc;
+list-style-image: none;
 }
